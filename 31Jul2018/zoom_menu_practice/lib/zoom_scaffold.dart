@@ -21,14 +21,17 @@ class _ZoomScaffoldState extends State<ZoomScaffold>
 
   Curve scaleDownCurve = new Interval(0.0, 0.3, curve: Curves.easeOut);
   Curve scaleUpCurve = new Interval(0.0, 1.0, curve: Curves.easeOut);
-  Curve slideOutCurve = new Interval(0.0, 1.3, curve: Curves.easeOut);
-  Curve slideInCurve = new Interval(0.0, 1.3, curve: Curves.easeOut);
+  Curve slideOutCurve = new Interval(0.0, 1.0, curve: Curves.easeIn);
+  Curve slideInCurve = new Interval(0.0, 1.0, curve: Curves.easeOut);
 
   @override
   void initState() {
     super.initState();
     controller = new MenuController(vsync: this)
       ..addListener(() => setState(() {}));
+
+     widget.menuScreen.controller = controller;
+
   }
 
   @override
@@ -42,10 +45,37 @@ class _ZoomScaffoldState extends State<ZoomScaffold>
     return new Stack(
       children: <Widget>[widget.menuScreen, createContentDisplay()],
     );
-    // TODO: implement build
   }
 
-  createContentDisplay() {}
+  createContentDisplay() {
+    return zoomAndSlideContent(new Container(
+      decoration: new BoxDecoration(
+        image: widget.contentScreen.background,
+      ),
+      child: new Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: new AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+          leading: new IconButton(
+            icon: new Icon(Icons.menu),
+            onPressed: (){
+              controller.toggle();
+            },
+          ),
+          title: new Text(
+            widget.contentScreen.title,
+            style: new TextStyle(
+              fontFamily: 'bebas-neue',
+              fontSize: 25.0
+            ),
+          ),
+        ),
+        body: widget.contentScreen.contentBuilder(context),
+      ),
+
+    ));
+  }
 
   zoomAndSlideContent(Widget content){
     var slidePercent,scalePercent;
