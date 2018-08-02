@@ -21,8 +21,7 @@ final restaurantScreen = new Screen(
             iconBackgroundColor: Colors.lightGreen,
             icon: Icons.backup,
             title: 'Beef Steak',
-            subTitle:
-                '100 5th AVENUE, Melbourne',
+            subTitle: '100 5th AVENUE, Melbourne',
             heartCount: 12109,
           ),
           new _RestaurantCard(
@@ -30,15 +29,41 @@ final restaurantScreen = new Screen(
             iconBackgroundColor: Colors.red,
             icon: Icons.local_activity,
             title: 'True Indian',
-            subTitle:
-                '100 Harbour Esp,Docklands',
+            subTitle: '100 Harbour Esp,Docklands',
             heartCount: 20,
           ),
-
         ],
       );
     });
-final otherScreen = new Screen();
+
+final otherScreen = new Screen(
+    title: 'OTHER SCREEN',
+    background: new DecorationImage(
+      image: new AssetImage('assets/other_screen_bk.jpg'),
+      fit: BoxFit.cover,
+      colorFilter:
+          new ColorFilter.mode(const Color(0xCC000000), BlendMode.multiply),
+    ),
+    contentBuilder: (BuildContext context) {
+      return new Center(
+        child: new Container(
+          height: 300.0,
+          child: new Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: new Card(
+              child: new Column(
+                children: [
+                  new Image.asset('assets/other_screen_card_photo.jpg'),
+                  new Expanded(
+                      child: new Center(
+                          child: new Text('This is another screen!')))
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    });
 
 class _RestaurantCard extends StatelessWidget {
   final String headImageAssetPath;
@@ -103,9 +128,9 @@ class _RestaurantCard extends StatelessWidget {
                   height: 70.0,
                   decoration: new BoxDecoration(
                       gradient: new LinearGradient(colors: [
-                      const Color(0xFFAAAAAA),
-                      Colors.white,
-                      const Color(0xFFAAAAAA)
+                    const Color(0xFFAAAAAA),
+                    Colors.white,
+                    const Color(0xFFAAAAAA)
                   ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
                 ),
                 new Padding(
