@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
         getRowElement(),
         getColElement(),
         getBaseLineRow(context),
-        createStack()
+        // createStack()
       ],
     ));
   }
