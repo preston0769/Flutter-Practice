@@ -63,7 +63,18 @@ class SecondScreen extends StatelessWidget {
                               color: Colors.black,
                               fontSize: 16.0,
                               letterSpacing: 1.0),
-                        )))
+                        ))),
+                        new SizedBox(height: 50.0,),
+                        new Container(
+                          width: 50.0,
+                          height: 50.0,
+                          decoration: new BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.black
+                          ),
+                          child: new Icon(Icons.arrow_forward,color: Colors.white,),
+                        )
+
               ])),
             ),
             new SizedBox(
