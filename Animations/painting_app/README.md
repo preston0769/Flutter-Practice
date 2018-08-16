@@ -4,5 +4,5 @@ A project to demo how to use custom painter
 
 # Result
 
-(screenShots/radial progress bar.gif)
+![Alt Text](screenShots/radial progress bar.gif)
 
