@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() => runApp(new MyApp());
+void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+  runApp(new MyApp());
+}
 
 var AssetPath = [
   "assets/notes.png",
@@ -74,16 +78,21 @@ class LP3Screen extends StatelessWidget {
           new Expanded(
               flex: 1,
               child: new Column(children: <Widget>[
-                RaisedButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0)),
-                  color: Colors.red,
-                  child: new Container(
-                      alignment: Alignment(0.0, 0.0),
-                      width: sWidth-100.0,
-                      child: new Text("INFORMATION",style: TextStyle(color: Colors.white),)),
-                  onPressed: () {},
-                )
+                Transform(
+                    transform: Matrix4.translationValues(0.0, 10.0, 0.0),
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0)),
+                      color: Colors.red,
+                      child: new Container(
+                          alignment: Alignment(0.0, 0.0),
+                          width: sWidth - 100.0,
+                          child: new Text(
+                            "INFORMATION",
+                            style: TextStyle(color: Colors.white),
+                          )),
+                      onPressed: () {},
+                    ))
               ]))
         ]));
   }
