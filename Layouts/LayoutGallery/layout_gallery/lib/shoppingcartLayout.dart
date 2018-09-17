@@ -41,7 +41,9 @@ class ShoppingCartLayout extends StatelessWidget {
         backgroundColor: Colors.transparent,
         leading: IconButton(
           icon: Icon(Icons.keyboard_backspace),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           color: Colors.grey,
         ),
         title: new Text(

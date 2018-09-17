@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:layout_gallery/shoppingcartLayout.dart';
+import 'package:flutter/services.dart';
+import 'package:layout_gallery/navigationPage.dart';
+import 'flip_carosel.dart';
 
-main() => runApp(
-  new MyApp()
-  );
+void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-         brightness: Brightness.light
-      ),
+          brightness: Brightness.light, primarySwatch: Colors.deepOrange),
       home: MyHomePage(),
     );
   }
@@ -25,8 +27,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ShoppingCartLayout(),
-    );
+    return NavigationPage();
+    // return FlipCaroselLayout();
   }
 }
