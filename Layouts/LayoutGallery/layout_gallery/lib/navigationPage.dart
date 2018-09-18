@@ -54,7 +54,6 @@ class _NavigationPageState extends State<NavigationPage>
                   borderRadius: BorderRadius.all(Radius.circular(8.0)))),
           padding: EdgeInsets.all(20.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Container(
                 decoration: BoxDecoration(
@@ -86,6 +85,7 @@ class _NavigationPageState extends State<NavigationPage>
                       style: TextStyle(fontSize: 18.0, color: Colors.black)),
                 ],
               ),
+              Expanded(child: new Container(),),
               IconButton(
                   icon: Icon(
                 Icons.arrow_forward,
@@ -113,20 +113,23 @@ class _NavigationPageState extends State<NavigationPage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title:Text("Navigations",style: TextStyle( fontSize: 30.0),)
-        
-      ),
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.all(20.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                _buildItem(context, screens.first),
-                _buildItem(context, screens.elementAt(1))
-                ],
+    return WillPopScope(
+        onWillPop: () async{return false;},
+          child: Scaffold(
+        appBar: AppBar(
+          title:Text("Navigations",style: TextStyle( fontSize: 30.0),)
+          
+        ),
+        body: SafeArea(
+          child: Container(
+            padding: EdgeInsets.all(20.0),
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  _buildItem(context, screens.first),
+                  _buildItem(context, screens.elementAt(1))
+                  ],
+              ),
             ),
           ),
         ),
