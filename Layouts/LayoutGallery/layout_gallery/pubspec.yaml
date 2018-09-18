@@ -46,6 +46,9 @@ flutter:
    - assets/flip_carosel/object1.jpg
    - assets/flip_carosel/object2.jpg
    - assets/flip_carosel/object3.jpg
+   - assets/flip_carosel/object4.jpg
+   - assets/flip_carosel/object5.jpg
+   - assets/flip_carosel/object6.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

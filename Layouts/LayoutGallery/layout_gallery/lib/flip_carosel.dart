@@ -5,6 +5,33 @@ import 'package:flutter/material.dart';
 
 List<CardViewModel> cardList = [
   CardViewModel(
+      address: 'PRESTON STREET',
+      maxHeightInFeet: 8,
+      minHeightInFeet: 7,
+      tempInDegreee: 44.6,
+      backgroundAssetPath: 'assets/flip_carosel/object4.jpg',
+      cardinalDirection: "ENS",
+      weatherType: "Rainy",
+      windSpeedInMph: 30.2),
+  CardViewModel(
+      address: 'FANNING ROAD',
+      maxHeightInFeet: 2,
+      minHeightInFeet: 0,
+      tempInDegreee: 34.6,
+      backgroundAssetPath: 'assets/flip_carosel/object6.jpg',
+      cardinalDirection: "ENS",
+      weatherType: "Sunny",
+      windSpeedInMph: 55.2),
+  CardViewModel(
+      address: 'FRAND ROAD',
+      maxHeightInFeet: 8,
+      minHeightInFeet: 7,
+      tempInDegreee: 44.6,
+      backgroundAssetPath: 'assets/flip_carosel/object5.jpg',
+      cardinalDirection: "ENS",
+      weatherType: "Rainy",
+      windSpeedInMph: 30.2),
+  CardViewModel(
       address: '10TH STREET',
       maxHeightInFeet: 3,
       minHeightInFeet: 2,

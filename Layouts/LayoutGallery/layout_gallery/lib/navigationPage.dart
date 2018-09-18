@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:layout_gallery/flip_carosel.dart';
+import 'package:layout_gallery/loginLayout.dart';
 import 'package:layout_gallery/shoppingcartLayout.dart';
 
 List<NavigationItem> screens = [
@@ -9,11 +10,14 @@ List<NavigationItem> screens = [
       sreen: ShoppingCartLayout(),
       title: "ShoppingCart",
       subTitle: "Simple Shoping Cart"),
-
   new NavigationItem(
       sreen: FlipCaroselLayout(),
       title: "Flip Carosel",
-      subTitle: "Test Flip Carosel")
+      subTitle: "Test Flip Carosel"),
+  new NavigationItem(
+      sreen: LoginLayout(),
+      title: "Login Page",
+      subTitle: "Now for input")
 ];
 
 List colors = [
@@ -48,8 +52,10 @@ class _NavigationPageState extends State<NavigationPage>
         },
         child: Container(
           decoration: ShapeDecoration(
-              gradient: LinearGradient(
-                  colors: [Color(0xff81CDFF),Color(0xFF79F3FF),]),
+              gradient: LinearGradient(colors: [
+                Color(0xff81CDFF),
+                Color(0xFF79F3FF),
+              ]),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(8.0)))),
           padding: EdgeInsets.all(20.0),
@@ -85,7 +91,9 @@ class _NavigationPageState extends State<NavigationPage>
                       style: TextStyle(fontSize: 18.0, color: Colors.black)),
                 ],
               ),
-              Expanded(child: new Container(),),
+              Expanded(
+                child: new Container(),
+              ),
               IconButton(
                   icon: Icon(
                 Icons.arrow_forward,
@@ -114,22 +122,23 @@ class _NavigationPageState extends State<NavigationPage>
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-        onWillPop: () async{return false;},
-          child: Scaffold(
+      onWillPop: () async {
+        return false;
+      },
+      child: Scaffold(
         appBar: AppBar(
-          title:Text("Navigations",style: TextStyle( fontSize: 30.0),)
-          
-        ),
+            title: Text(
+          "Navigations",
+          style: TextStyle(fontSize: 30.0),
+        )),
         body: SafeArea(
           child: Container(
             padding: EdgeInsets.all(20.0),
             child: SingleChildScrollView(
               child: Column(
-                children: <Widget>[
-                  _buildItem(context, screens.first),
-                  _buildItem(context, screens.elementAt(1))
-                  ],
-              ),
+                  children: screens.map((screen) {
+                return _buildItem(context, screen);
+              }).toList()),
             ),
           ),
         ),
