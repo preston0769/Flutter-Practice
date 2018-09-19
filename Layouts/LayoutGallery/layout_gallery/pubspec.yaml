@@ -50,6 +50,10 @@ flutter:
    - assets/flip_carosel/object5.jpg
    - assets/flip_carosel/object6.jpg
 
+   - assets/icons/profile.png
+   - assets/icons/lock.png
+
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
 

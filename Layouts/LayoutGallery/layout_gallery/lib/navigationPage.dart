@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:layout_gallery/flip_carosel.dart';
+import 'package:layout_gallery/flipcaroselLayout.dart';
 import 'package:layout_gallery/loginLayout.dart';
 import 'package:layout_gallery/shoppingcartLayout.dart';
 
@@ -20,12 +20,17 @@ List<NavigationItem> screens = [
       subTitle: "Now for input")
 ];
 
-List colors = [
+List<Color> colors = [
   Colors.red,
+  Colors.pink,
+  Colors.lightBlue,
+  Colors.lightBlueAccent.shade200,
   Colors.blue,
   Colors.deepOrangeAccent,
   Colors.green,
-  Colors.orange
+  Colors.orange,
+  Colors.cyan,
+  Colors.blueGrey,
 ];
 
 class NavigationPage extends StatefulWidget {

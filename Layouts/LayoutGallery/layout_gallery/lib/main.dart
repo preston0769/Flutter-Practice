@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:layout_gallery/navigationPage.dart';
-import 'flip_carosel.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
@@ -32,6 +31,5 @@ class _MyHomePageState extends State<MyHomePage> {
           return false;
         },
         child: NavigationPage());
-    // return FlipCaroselLayout();
   }
 }
