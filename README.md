@@ -1,4 +1,8 @@
 # Flutter-Practice
 The workspace for daily practice
 
-practice one ( JULY 31 2018) -- Zoom Menu With Animation
+
+---
+### currently working on
+
+### [Layout Gallery](https://github.com/preston0769/Flutter-Practice/tree/master/Layouts/LayoutGallery/layout_gallery)
