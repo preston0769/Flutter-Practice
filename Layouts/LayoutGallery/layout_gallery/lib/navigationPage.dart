@@ -2,22 +2,25 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:layout_gallery/flipcaroselLayout.dart';
+import 'package:layout_gallery/furnitureshopLayout.dart';
 import 'package:layout_gallery/loginLayout.dart';
 import 'package:layout_gallery/shoppingcartLayout.dart';
 
 List<NavigationItem> screens = [
   new NavigationItem(
-      sreen: ShoppingCartLayout(),
-      title: "ShoppingCart",
-      subTitle: "Simple Shoping Cart"),
-  new NavigationItem(
       sreen: FlipCaroselLayout(),
       title: "Flip Carosel",
       subTitle: "Test Flip Carosel"),
   new NavigationItem(
-      sreen: LoginLayout(),
-      title: "Login Page",
-      subTitle: "Now for input")
+      sreen: LoginLayout(), title: "Login Page", subTitle: "Now for input"),
+  new NavigationItem(
+      sreen: ShoppingCartLayout(),
+      title: "ShoppingCart",
+      subTitle: "Simple Shoping Cart"),
+  new NavigationItem(
+      sreen: FurnitureShopLayout(),
+      title: "Furniture Shop",
+      subTitle: "Furniture shop")
 ];
 
 List<Color> colors = [
@@ -58,8 +61,8 @@ class _NavigationPageState extends State<NavigationPage>
         child: Container(
           decoration: ShapeDecoration(
               gradient: LinearGradient(colors: [
-                Color(0xff81CDFF),
-                Color(0xFF79F3FF),
+                Color(0x9981CDEE),
+                Color(0x9979F3EE),
               ]),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(8.0)))),
@@ -92,19 +95,29 @@ class _NavigationPageState extends State<NavigationPage>
                             fontSize: 20.0,
                             color: Colors.white)),
                   ),
-                  Text(item.subTitle,
-                      style: TextStyle(fontSize: 18.0, color: Colors.black)),
+                  Container(
+                    width: 170.0,
+                    height: 20.0,
+                    child: OverflowBox(
+                      child: Text(item.subTitle,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              fontSize: 16.0,
+                              color: Colors.black.withAlpha(200))),
+                    ),
+                  ),
                 ],
               ),
               Expanded(
                 child: new Container(),
               ),
               IconButton(
+                  onPressed: () {},
                   icon: Icon(
-                Icons.arrow_forward,
-                color: Colors.white,
-                size: 30.0,
-              ))
+                    Icons.arrow_forward,
+                    color: Colors.white,
+                    size: 30.0,
+                  ))
             ],
           ),
         ),
@@ -131,6 +144,7 @@ class _NavigationPageState extends State<NavigationPage>
         return false;
       },
       child: Scaffold(
+        backgroundColor: Colors.white70,
         appBar: AppBar(
             title: Text(
           "Navigations",

@@ -63,7 +63,6 @@ class ShoppingMainPage extends StatefulWidget {
 }
 
 class _ShoppingMainPageState extends State<ShoppingMainPage> {
-
   _updateState() {
     setState(() {});
   }
@@ -82,17 +81,16 @@ class _ShoppingMainPageState extends State<ShoppingMainPage> {
               colors: [Color(0xFFE7EAF2), Color(0xFFD2D9EB)])),
       child: Column(
         children: <Widget>[
-          SizedBox(
-            height: 20.0,
-          ),
           Expanded(
-              child: Column(
-                  children: shoppingItems.map((item) {
-            return ItemCard(
-              model: item,
-              onItemChanged: _updateState,
-            );
-          }).toList())),
+              child: SingleChildScrollView(
+            child: Column(
+                children: shoppingItems.map((item) {
+              return ItemCard(
+                model: item,
+                onItemChanged: _updateState,
+              );
+            }).toList()),
+          )),
           Container(
             color: Color(0x99F5F7FD),
             padding: EdgeInsets.all(20.0),
@@ -134,7 +132,8 @@ class _ShoppingMainPageState extends State<ShoppingMainPage> {
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 1.0)),
-                      Text("${two_digits_formatter.format(subTotal+30.0)} USD",
+                      Text(
+                          "${two_digits_formatter.format(subTotal + 30.0)} USD",
                           style: TextStyle(
                               color: Colors.orange,
                               fontSize: 20.0,
@@ -165,9 +164,9 @@ class _ShoppingMainPageState extends State<ShoppingMainPage> {
 
 class ItemCard extends StatefulWidget {
   final ShoppingItemModel model;
-  final VoidCallback onItemChanged ;
+  final VoidCallback onItemChanged;
 
-  ItemCard({@required this.model,@required this.onItemChanged});
+  ItemCard({@required this.model, @required this.onItemChanged});
 
   @override
   _ItemCardState createState() => _ItemCardState();
