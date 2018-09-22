@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:layout_gallery/appointmentLayout/appointmentLayout.dart';
 import 'package:layout_gallery/flipcaroselLayout.dart';
 import 'package:layout_gallery/furnitureshopLayout.dart';
 import 'package:layout_gallery/loginLayout.dart';
@@ -20,7 +21,11 @@ List<NavigationItem> screens = [
   new NavigationItem(
       sreen: FurnitureShopLayout(),
       title: "Furniture Shop",
-      subTitle: "Furniture shop")
+      subTitle: "Furniture shop"),
+  new NavigationItem(
+      sreen: AppointmentLayout(),
+      title: "Appoinment",
+      subTitle: "Drop down and selector")
 ];
 
 List<Color> colors = [
