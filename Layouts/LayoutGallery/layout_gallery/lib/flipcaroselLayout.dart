@@ -192,9 +192,9 @@ class _CardFlipperState extends State<CardFlipper>
   }
 
   Matrix4 _buildCardProjection(double scrollPercent) {
-    final perspective = 0.002;
+    final perspective = 0.001;
     final radius = 1.0;
-    final angle = scrollPercent * pi / 8;
+    final angle = scrollPercent * pi / 4;
     final horizontalTranslation = 0.0;
 
     Matrix4 projection = Matrix4.identity()

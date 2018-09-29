@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:layout_gallery/appointmentLayout/appointmentLayout.dart';
+import 'package:layout_gallery/calenderLayout/calenderLayout.dart';
 import 'package:layout_gallery/flipcaroselLayout.dart';
 import 'package:layout_gallery/furnitureshopLayout.dart';
 import 'package:layout_gallery/loginLayout.dart';
@@ -25,7 +26,11 @@ List<NavigationItem> screens = [
   new NavigationItem(
       sreen: AppointmentLayout(),
       title: "Appoinment",
-      subTitle: "Drop down and selector")
+      subTitle: "Drop down and selector"),
+  new NavigationItem(
+      sreen: CalenderLayout(),
+      title: "Calender",
+      subTitle: "Calender layout")
 ];
 
 List<Color> colors = [
@@ -157,7 +162,7 @@ class _NavigationPageState extends State<NavigationPage>
         )),
         body: SafeArea(
           child: Container(
-            padding: EdgeInsets.all(20.0),
+            padding: EdgeInsets.only( left: 20.0,right: 20.0),
             child: SingleChildScrollView(
               child: Column(
                   children: screens.map((screen) {

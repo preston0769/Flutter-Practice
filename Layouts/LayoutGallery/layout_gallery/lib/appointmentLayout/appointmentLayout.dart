@@ -9,10 +9,15 @@ class _AppointmentLayoutState extends State<AppointmentLayout> {
   Widget _buildAppBar() {
     return Row(
       children: <Widget>[
-        Icon(
-          Icons.arrow_back,
-          color: Colors.black.withAlpha(120),
-          size: 32.0,
+        InkWell(
+          onTap: (){
+            Navigator.pop(context);
+          },
+                  child: Icon(
+            Icons.arrow_back,
+            color: Colors.black.withAlpha(120),
+            size: 32.0,
+          ),
         ),
         Expanded(
           child: new Container(),
