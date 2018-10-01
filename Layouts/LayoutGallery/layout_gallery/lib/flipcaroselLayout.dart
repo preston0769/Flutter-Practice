@@ -78,37 +78,39 @@ class _FlipCaroselLayoutState extends State<FlipCaroselLayout> {
   double scrollPercent = 0.0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: new Column(
-        children: <Widget>[
-          // room for status bar
-          Container(
-            height: 36.0,
-            width: double.infinity,
-          ),
+    return WillPopScope(
+          child: Scaffold(
+        backgroundColor: Colors.black,
+        body: new Column(
+          children: <Widget>[
+            // room for status bar
+            Container(
+              height: 36.0,
+              width: double.infinity,
+            ),
 
-          //Cards
-          Expanded(
-            child: Padding(
-                padding: EdgeInsets.all(16.0),
-                child: CardFlipper(onScroll: (double scrollPercent) {
-                  setState(() {
-                    this.scrollPercent = scrollPercent;
-                  });
-                })),
-          ),
+            //Cards
+            Expanded(
+              child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: CardFlipper(onScroll: (double scrollPercent) {
+                    setState(() {
+                      this.scrollPercent = scrollPercent;
+                    });
+                  })),
+            ),
 
-          //Bottom bar
-          BottomBar(
-              cardCount: cardList.length, scrollPercent: this.scrollPercent),
+            //Bottom bar
+            BottomBar(
+                cardCount: cardList.length, scrollPercent: this.scrollPercent),
 
-          Container(
-            width: double.infinity,
-            height: 20.0,
-          )
-        ],
-      ),
+            Container(
+              width: double.infinity,
+              height: 20.0,
+            )
+          ],
+        ),
+      ), onWillPop: () {},
     );
   }
 }
