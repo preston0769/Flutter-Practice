@@ -13,10 +13,15 @@ class _CalenderLayoutState extends State<CalenderLayout> {
       padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
       child: Row(
         children: <Widget>[
-          Icon(
-            Icons.dehaze,
-            color: Colors.white,
-            size: 32.0,
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(
+              Icons.dehaze,
+              color: Colors.white,
+              size: 32.0,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 8.0),
@@ -84,44 +89,46 @@ class _CalenderLayoutState extends State<CalenderLayout> {
   }
 
   Widget _buildItemList() {
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          ActivityItem(
-            iconImagePath: "assets/flip_carosel/object2.jpg",
-            locationStr: "Taotao home",
-            timeStr: "7 pm",
-            title: "Watch youtube",
-          ),
-          ActivityItem(
-            iconImagePath: "assets/flip_carosel/object5.jpg",
-            locationStr: "Etihad Stadium",
-            timeStr: "8 pm",
-            title: "AFL Final",
-            highlightColor: Colors.blue,
-          ),
-          ActivityItem(
-            iconImagePath: "assets/flip_carosel/object5.jpg",
-            locationStr: "NGV Gallery",
-            timeStr: "9:30 am",
-            title: "Gallery visiting",
-            highlightColor: Colors.yellow,
-          ),
-          ActivityItem(
-            iconImagePath: "assets/flip_carosel/object2.jpg",
-            locationStr: "Botanic Garden",
-            timeStr: "10 am",
-            title: "Spring touring",
-            highlightColor: Colors.pinkAccent,
-          ),
-          ActivityItem(
-            iconImagePath: "assets/flip_carosel/object6.jpg",
-            locationStr: "Docklands",
-            timeStr: "10 pm",
-            title: "Fireworks play",
-            highlightColor: Colors.orange,
-          ),
-        ],
+    return Scrollbar(
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            ActivityItem(
+              iconImagePath: "assets/flip_carosel/object2.jpg",
+              locationStr: "Taotao home",
+              timeStr: "7 pm",
+              title: "Watch youtube",
+            ),
+            ActivityItem(
+              iconImagePath: "assets/flip_carosel/object5.jpg",
+              locationStr: "Etihad Stadium",
+              timeStr: "8 pm",
+              title: "AFL Final",
+              highlightColor: Colors.blue,
+            ),
+            ActivityItem(
+              iconImagePath: "assets/flip_carosel/object5.jpg",
+              locationStr: "NGV Gallery",
+              timeStr: "9:30 am",
+              title: "Gallery visiting",
+              highlightColor: Colors.yellow,
+            ),
+            ActivityItem(
+              iconImagePath: "assets/flip_carosel/object2.jpg",
+              locationStr: "Botanic Garden",
+              timeStr: "10 am",
+              title: "Spring touring",
+              highlightColor: Colors.pinkAccent,
+            ),
+            ActivityItem(
+              iconImagePath: "assets/flip_carosel/object6.jpg",
+              locationStr: "Docklands",
+              timeStr: "10 pm",
+              title: "Fireworks play",
+              highlightColor: Colors.orange,
+            ),
+          ],
+        ),
       ),
     );
   }

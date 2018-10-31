@@ -60,6 +60,9 @@ flutter:
 
    - assets/icons/profile.png
    - assets/icons/lock.png
+   - assets/icons/visa-logo.png
+   - assets/icons/mastercard-logo.png
+   - assets/icons/paypal-logo.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

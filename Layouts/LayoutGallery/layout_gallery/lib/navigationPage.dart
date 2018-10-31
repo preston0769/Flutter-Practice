@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:layout_gallery/appointmentLayout/appointmentLayout.dart';
 import 'package:layout_gallery/calenderLayout/calenderLayout.dart';
+import 'package:layout_gallery/checkoutLayout.dart';
 import 'package:layout_gallery/flipcaroselLayout.dart';
 import 'package:layout_gallery/furnitureshopLayout.dart';
 import 'package:layout_gallery/loginLayout.dart';
@@ -30,7 +31,12 @@ List<NavigationItem> screens = [
   new NavigationItem(
       sreen: CalenderLayout(),
       title: "Calender",
-      subTitle: "Calender layout")
+      subTitle: "Calender layout"),
+
+  new NavigationItem(
+      sreen: CheckoutLayout(),
+      title: "Checkout",
+      subTitle: "A simple checkout page")
 ];
 
 List<Color> colors = [
