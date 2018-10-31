@@ -154,7 +154,7 @@ class PaymentMethods extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(32.0),
+              padding: EdgeInsets.fromLTRB(32.0, 32.0, 32.0, 12.0),
               child: Text(
                 "Payment Method",
                 style: TextStyle(
@@ -165,7 +165,7 @@ class PaymentMethods extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(12.0),
                 child: Column(
                   children: <Widget>[
                     Expanded(
@@ -188,7 +188,7 @@ class PaymentMethods extends StatelessWidget {
                     )),
                     Container(
                       padding: EdgeInsets.only(
-                          left: 24.0, right: 24.0, bottom: 16.0),
+                          top: 8.0, left: 24.0, right: 24.0, bottom: 16.0),
                       width: double.infinity,
                       child: FlatButton(
                         padding: EdgeInsets.all(16.0),
@@ -232,11 +232,11 @@ class PaymentMethodItem extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
-            child: Image.asset(logoPath, fit: BoxFit.fill, width: 64.0),
+            padding: const EdgeInsets.fromLTRB(16.0, 8.0, 12.0, 8.0),
+            child: Image.asset(logoPath, fit: BoxFit.fill, width: 48.0),
           ),
           Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(12.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
