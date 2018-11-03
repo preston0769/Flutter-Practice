@@ -8,6 +8,7 @@ import 'package:layout_gallery/flipcaroselLayout.dart';
 import 'package:layout_gallery/furnitureshopLayout.dart';
 import 'package:layout_gallery/loginLayout.dart';
 import 'package:layout_gallery/shoppingcartLayout.dart';
+import 'package:layout_gallery/sliverLayout.dart';
 
 List<NavigationItem> screens = [
   new NavigationItem(
@@ -36,7 +37,11 @@ List<NavigationItem> screens = [
   new NavigationItem(
       sreen: CheckoutLayout(),
       title: "Checkout",
-      subTitle: "A simple checkout page")
+      subTitle: "A simple checkout page"),
+  new NavigationItem(
+      sreen: SliverLayout1(),
+      title: "SliverLayout",
+      subTitle: "Sliver try it out")
 ];
 
 List<Color> colors = [
